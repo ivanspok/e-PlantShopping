@@ -4,6 +4,12 @@ body, h1, ul {
     padding: 0;
 }
 
+h1 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
 /* Set a background color */
 body {
     font-family: Arial, sans-serif;
