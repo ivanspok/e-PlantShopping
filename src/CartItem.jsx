@@ -19,14 +19,20 @@ const CartItem = ({ onContinueShopping, setAddedToCart }) => {
   };
 
   const handleIncrement = (item) => {
-    item.quantity += 1;
-    dispatch(updateQuantity(item))
+    let updatedItem = {
+        ...item,
+        quantity: item.quantity + 1
+    }
+    dispatch(updateQuantity(updatedItem ))
   };
 
   const handleDecrement = (item) => {
    if (item.quantity > 1) {
-    item.quantity -= 1;
-    dispatch(updateQuantity(item))
+    let updatedItem = {
+        ...item,
+        quantity: item.quantity - 1
+    }
+    dispatch(updateQuantity(updatedItem ))
    } else {
     dispatch(removeItem(item));
     setAddedToCart((prevState) => ({
